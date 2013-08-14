@@ -1,3 +1,5 @@
+DATA.flock(File::LOCK_EX | File::LOCK_NB) or abort 'Already Running'
+
 require 'open-uri'
 10.times do
   filename = Time.now.strftime("%Y_%m_%d_%H%M%S")
@@ -6,3 +8,6 @@ require 'open-uri'
   end
   sleep 1
 end
+
+__END__
+DO NOT DELETE: used for locking

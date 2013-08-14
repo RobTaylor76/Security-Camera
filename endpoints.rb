@@ -5,5 +5,7 @@ require 'sinatra'
 set :bind, '0.0.0.0'
 
 get '/alarm' do
+  command = 'ruby file_download.rb&'
+  system(command)
   "Hello Sinatra!"
 end
