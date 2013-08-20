@@ -6,9 +6,9 @@ set :bind, '0.0.0.0'
 
 get '/alarm' do
   begin
-  command = 'ruby file_download.rb&'
+  command = 'ruby take_pictures.rb&'
   system(command)
   rescue
   end
-  "Hello Sinatra!"
+  "Alarm Registered!"
 end
