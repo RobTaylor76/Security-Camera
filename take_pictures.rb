@@ -12,11 +12,12 @@ directory = "images/#{date}"
 unless Dir.exists? directory
   Dir.mkdir directory
 end
-3.times do
+
+2.times do
   timestamp = Time.now.strftime("%H_%M__%S")
   filename = "#{directory}/#{timestamp}.jpg"
   begin
-    command = "raspistill -o #{filename} -t 1 -vf -hf -q 50"
+    command = "raspistill -o #{filename} -t 1 -q 75 "
     system(command)
   rescue
   end
