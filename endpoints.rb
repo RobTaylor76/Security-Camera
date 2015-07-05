@@ -12,3 +12,13 @@ get '/alarm' do
   end
   "Alarm Registered!"
 end
+
+get '/cleardown' do
+
+  begin
+  command = 'rm -r /home/rob/work/security-cam/images/*'
+  system(command)
+  rescue
+  end
+  "Files Cleared Down!"
+end

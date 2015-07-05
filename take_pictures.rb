@@ -5,7 +5,7 @@ ARGV.each do|a|
   force = true if a == '--force'
 end
 unless force
-  exit if (time.hour >= 20) || (time.hour < 7) #time box pictures to daylight
+  exit if (time.hour >= 22) || (time.hour < 4) #time box pictures to daylight
 end
 date = time.strftime("%Y_%m_%d")
 directory = "images/#{date}"
@@ -17,7 +17,7 @@ end
   timestamp = Time.now.strftime("%H_%M__%S")
   filename = "#{directory}/#{timestamp}.jpg"
   begin
-    command = "raspistill -o #{filename} -t 1 -q 75 "
+    command = "raspistill -o #{filename} -t 1 -q 50 "
     system(command)
   rescue
   end
